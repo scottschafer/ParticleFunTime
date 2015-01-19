@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+   <head>
+      <meta charset="UTF-8" />
+      <title>ParticleFunTime test</title>
+      <script type="text/javascript" src="jquery.min.js"></script>
+      <script type="text/javascript" src="../js/particleFunTime.js"></script>
+   
+      <style>
+        div {
+          display: inline-block;
+        }
+      </style>
+
+   </head>
+
+
+   <script>
+
+   $(function() {
+     var pft1 = new ParticleFunTime("particleDiv1", {running: false});
+     var pft2 = new ParticleFunTime("particleDiv2",{running: false, theme:"starBurst"});
+     var pft3 = new ParticleFunTime("particleDiv3", {running: false, theme:"starField", running:true});
+
+     $("#particleDiv1").mouseover(function() { pft1.start()});
+     $("#particleDiv1").mouseout(function() { pft1.stop()});
+
+     $("#particleDiv2").mouseover(function() { pft2.start()});
+     $("#particleDiv2").mouseout(function() { pft2.stop()});
+
+     $("#particleDiv3").mouseover(function() { pft3.start()});
+     $("#particleDiv3").mouseout(function() { pft3.stop()});
+	});
+
+   </script>
+
+   <body>
+     <div id="particleDiv1" style="height:400px;width:400px"></div>
+     <div id="particleDiv2" style="height:400px;width:400px"></div>
+     <div id="particleDiv3" style="height:400px;width:400px"></div>
+   </body>
+
+</html>
